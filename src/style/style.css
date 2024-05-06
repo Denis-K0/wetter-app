@@ -34,10 +34,10 @@ nav {
 }
 
 button{
-    width: 400px;
+    min-width: 200px;
     font-size: 1.1rem;
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 10px;
     border: none;
     background-color: var(--mainColor);
@@ -45,6 +45,18 @@ button{
 
 button:hover {
     background-color: #e0c36b;
+}
+
+input {
+	border: 1px solid #E5E7EB;
+	border-radius: 30px;
+	font-size: 0.9rem;
+	width: 168px;
+	padding: 15px 15px;
+}
+
+input:focus {
+	outline: none;
 }
 
 /* Main */

@@ -1,7 +1,9 @@
-import printMessage from "./js/dummy";
 import "./style/style.css";
+import setWeatherData from "./js/setWeatherData";
 
 "use strict";
+
+setWeatherData();
 
 /* 
 Schritt 1 - Datenbasis:
@@ -13,9 +15,7 @@ Schritt 1 - Datenbasis:
                     -> if:
                         -> throw: Error ungültiger Ort?
                         -> throw: Error Server Probleme?
-                    -> Datenfiltern Funktion
                     -> return -> Export der Daten
-    Funktion    -> Filtern der benötigten Daten und Rückgabe an Objekt
 
 Schritt 2 - Logik:
     Function    -> Starte App Logik
@@ -46,6 +46,3 @@ Schritt 3 - Design:
     Function    -> Wetter Icon ändert sich jedesmal nach Änderung der Daten entsprechend dieser Daten.
     
 */
-
-
-printMessage();
