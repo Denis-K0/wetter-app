@@ -9,105 +9,118 @@
     <header>
         <p>Wetter App</p>
         <nav>
-            <input type="text" placeholder="Das Wetter in ...">
-            <button>Anzeigen</button>
+            <input id="locationInput" type="text" placeholder="Das Wetter in ...">
+            <button id="submitBtn">Anzeigen</button>
         </nav>
     </header>
     <main>
         <div class="appContainer">
             <div class="appLeftSide">
-                <p class=city>Stadt</p>
-                <p class="country">Land</p>
-                <p class="actualDateAndTime">XX.XX.XXXX, XX:XX</p>
-                <img class="actualWeatherIcon" src="" alt="Wetter Icon">
-                <p class="actualTemperatur">X° X°</p>
-                <p class="actualRainChance">Niederschlagswarcheinlichkeit XX%</p>
+                <div class="appHeaderContainer">
+                    <p id=city>Wetter</p>
+                    <p id="country">App</p>
+                </div>
+                <p id="actualDateAndTime"></p>
+                <img id="actualWeatherIcon" src="<%=require('./assets/dummy-Wetter.png')%>" alt="Wetter Icon">
+                <p id="actualTemperatur">0° 0°</p>
+                <p id="actualRainChance">Niederschlagswarcheinlichkeit 0%</p>
             </div>
             <div class="appRightSide">
+                <p id="dateDay01" class="dateDay">Wochentag, 00.00.0000</p>
                 <div id="day01Container" class="dayContainer">
-                    <p id="dateDay01" class="dateDay">Datum</p>
                     <div class="dayTimeContainer01 dayTimeContainer">
                         <p class="dayTime">Morgens</p>
-                        <img src="" alt="" class="dayIcon" id="day01Icon01">
-                        <p class="dayTemperatur" id="day01Temperatur01">X° X°</p>
-                        <p id="day01RainChance01" class="dayRainChance">Niederschlag: XX%</p>
+                        <img src="<%=require('./assets/dummy-Wetter.png')%>" alt="Wetter Icon" class="dayIcon" id="day01Icon01">
+                        <p class="dayTemperatur" id="day01Temperatur01">0° 0°</p>
+                        <p id="day01RainChance01" class="dayRainChance">Niederschlag: 00%</p>
                     </div>
                     <div class="dayTimeContainer02 dayTimeContainer">
                         <p class="dayTime">Mittags</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day01Icon02">
-                        <p class="dayTemperatur" id="day01Temperatur02">X° X°</p>
-                        <p id="day01RainChance02" class="dayRainChance">Niederschlag: XX%</p>
+                        <img src="<%=require('./assets/dummy-Wetter.png')%>" alt="Wetter Icon" class="dayIcon" id="day01Icon02">
+                        <p class="dayTemperatur" id="day01Temperatur02">0° 0°</p>
+                        <p id="day01RainChance02" class="dayRainChance">Niederschlag: 00%</p>
                     </div>
                     <div class="dayTimeContainer03 dayTimeContainer">
                         <p class="dayTime">Abends</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day01Icon03">
-                        <p class="dayTemperatur" id="day01Temperatur03">X° X°</p>
-                        <p id="day01RainChance03" class="dayRainChance">Niederschlag: XX%</p>
+                        <img src="<%=require('./assets/dummy-Wetter.png')%>" alt="Wetter Icon" class="dayIcon" id="day01Icon03">
+                        <p class="dayTemperatur" id="day01Temperatur03">0° 0°</p>
+                        <p id="day01RainChance03" class="dayRainChance">Niederschlag: 0%</p>
                     </div>
                     <div class="dayTimeContainer04 dayTimeContainer">
                         <p class="dayTime">Nachts</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day01Icon04">
-                        <p class="dayTemperatur" id="day01Temperatur04">X° X°</p>
-                        <p id="day01RainChance04" class="dayRainChance">Niederschlag: XX%</p>
+                        <img src="<%=require('./assets/dummy-Wetter.png')%>" alt="Wetter Icon" class="dayIcon" id="day01Icon04">
+                        <p class="dayTemperatur" id="day01Temperatur04">0° 0°</p>
+                        <p id="day01RainChance04" class="dayRainChance">Niederschlag: 0%</p>
                     </div>
                 </div>
+                <p id="dateDay02" class="dateDay">Wochentag, 00.00.0000</p>
                 <div id="day02Container" class="dayContainer">
-                    <p id="dateDay02" class="dateDay">Datum</p>
                     <div class="dayTimeContainer01 dayTimeContainer">
                         <p class="dayTime">Morgens</p>
-                        <img src="" alt="" class="dayIcon" id="day02Icon01">
-                        <p class="dayTemperatur" id="day02Temperatur01">X° X°</p>
-                        <p id="day02RainChance01" class="dayRainChance">Niederschlag: XX%</p>
+                        <img src="<%=require('./assets/dummy-Wetter.png')%>" alt="Wetter Icon" class="dayIcon" id="day02Icon01">
+                        <p class="dayTemperatur" id="day02Temperatur01">0° 0°</p>
+                        <p id="day02RainChance01" class="dayRainChance">Niederschlag: 0%</p>
                     </div>
                     <div class="dayTimeContainer02 dayTimeContainer">
                         <p class="dayTime">Mittags</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day02Icon02">
-                        <p class="dayTemperatur" id="day02Temperatur02">X° X°</p>
-                        <p id="day02RainChance02" class="dayRainChance">Niederschlag: XX%</p>
+                        <img src="<%=require('./assets/dummy-Wetter.png')%>" alt="Wetter Icon" class="dayIcon" id="day02Icon02">
+                        <p class="dayTemperatur" id="day02Temperatur02">0° 0°</p>
+                        <p id="day02RainChance02" class="dayRainChance">Niederschlag: 0%</p>
                     </div>
                     <div class="dayTimeContainer03 dayTimeContainer">
                         <p class="dayTime">Abends</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day02Icon03">
-                        <p class="dayTemperatur" id="day02Temperatur03">X° X°</p>
-                        <p id="day02RainChance03" class="dayRainChance">Niederschlag: XX%</p>
+                        <img src="<%=require('./assets/dummy-Wetter.png')%>" alt="Wetter Icon" class="dayIcon" id="day02Icon03">
+                        <p class="dayTemperatur" id="day02Temperatur03">0° 0°</p>
+                        <p id="day02RainChance03" class="dayRainChance">Niederschlag: 0%</p>
                     </div>
                     <div class="dayTimeContainer04 dayTimeContainer">
                         <p class="dayTime">Nachts</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day02Icon04">
-                        <p class="dayTemperatur" id="day02Temperatur04">X° X°</p>
-                        <p id="day02RainChance04" class="dayRainChance">Niederschlag: XX%</p>
+                        <img src="<%=require('./assets/dummy-Wetter.png')%>" alt="Wetter Icon" class="dayIcon" id="day02Icon04">
+                        <p class="dayTemperatur" id="day02Temperatur04">0° 0°</p>
+                        <p id="day02RainChance04" class="dayRainChance">Niederschlag: 0%</p>
                     </div>
                 </div>
+                <p id="dateDay03" class="dateDay">Wochentag, 00.00.0000</p>
                 <div id="day03Container" class="dayContainer">
-                    <p id="dateDay03" class="dateDay">Datum</p>
                     <div class="dayTimeContainer01 dayTimeContainer">
                         <p class="dayTime">Morgens</p>
-                        <img src="" alt="" class="dayIcon" id="day03Icon01">
-                        <p class="dayTemperatur" id="day03Temperatur01">X° X°</p>
-                        <p id="day03RainChance01" class="dayRainChance">Niederschlag: XX%</p>
+                        <img src="<%=require('./assets/dummy-Wetter.png')%>" alt="Wetter Icon" class="dayIcon" id="day03Icon01">
+                        <p class="dayTemperatur" id="day03Temperatur01">0° 0°</p>
+                        <p id="day03RainChance01" class="dayRainChance">Niederschlag: 0%</p>
                     </div>
                     <div class="dayTimeContainer02 dayTimeContainer">
                         <p class="dayTime">Mittags</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day03Icon02">
-                        <p class="dayTemperatur" id="day03Temperatur02">X° X°</p>
-                        <p id="day03RainChance02" class="dayRainChance">Niederschlag: XX%</p>
+                        <img src="<%=require('./assets/dummy-Wetter.png')%>" alt="Wetter Icon" class="dayIcon" id="day03Icon02">
+                        <p class="dayTemperatur" id="day03Temperatur02">0° 0°</p>
+                        <p id="day03RainChance02" class="dayRainChance">Niederschlag: 0%</p>
                     </div>
                     <div class="dayTimeContainer03 dayTimeContainer">
                         <p class="dayTime">Abends</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day03Icon03">
-                        <p class="dayTemperatur" id="day03Temperatur03">X° X°</p>
-                        <p id="day03RainChance03" class="dayRainChance">Niederschlag: XX%</p>
+                        <img src="<%=require('./assets/dummy-Wetter.png')%>" alt="Wetter Icon" class="dayIcon" id="day03Icon03">
+                        <p class="dayTemperatur" id="day03Temperatur03">0° 0°</p>
+                        <p id="day03RainChance03" class="dayRainChance">Niederschlag: 0%</p>
                     </div>
                     <div class="dayTimeContainer04 dayTimeContainer">
                         <p class="dayTime">Nachts</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day03Icon04">
-                        <p class="dayTemperatur" id="day03Temperatur04">X° X°</p>
-                        <p id="day03RainChance04" class="dayRainChance">Niederschlag: XX%</p>
+                        <img src="<%=require('./assets/dummy-Wetter.png')%>" alt="Wetter Icon" class="dayIcon" id="day03Icon04">
+                        <p class="dayTemperatur" id="day03Temperatur04">0° 0°</p>
+                        <p id="day03RainChance04" class="dayRainChance">Niederschlag: 0%</p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <dialog id="modal">
+        <div class="loader"></div>
+    </dialog>
+
+    <dialog id="errorModal">
+        <div id="errorLoader">
+            <button id="errorBtn">Zurück</button>
+            <p id="errorMsg"></p>
+        </div>
+    </dialog>
 
     <footer>
         <p>"Wetter App" by DK</p>

@@ -13,6 +13,11 @@ body {
     grid-template: 100px 1fr 80px / auto;
 }
 
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
 /* Header */
 
 header {
@@ -47,6 +52,10 @@ button:hover {
     background-color: #e0c36b;
 }
 
+button:focus {
+	outline: none;
+}
+
 input {
 	border: 1px solid #E5E7EB;
 	border-radius: 30px;
@@ -69,15 +78,206 @@ main {
 }
 
 .appContainer {
-    width: 80%;
-    height: 80%;
     background-color: white;
     box-shadow: 0px 1px 3px 0px #00000010;
     border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    padding: 50px;
+    gap: 75px;
 }
 
-/* The App */
+main p {
+    color: #333;
+}
 
+/* The App - Leftside */
+
+.appLeftSide {
+    display: grid;
+    grid-template: 115px 70px auto auto auto / auto;
+    justify-items: center;
+    align-items: center;
+}
+
+.appLeftSide p {
+    font-weight: bold;
+}
+
+.appHeaderContainer {
+    width: min-content;
+    display: grid;
+}
+
+#city {
+    color: #222;
+    font-size: 4rem; /* Startwert für die Schriftgröße */
+    white-space: nowrap;
+}
+
+#country {
+    background-color: var(--mainColor);
+    padding: 2px 10px;
+    font-size: 1.6rem;
+    border-radius: 30px;
+    justify-self: right;
+    align-self: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #222;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#actualDateAndTime {
+    font-size: 2.5rem;
+    align-self: end;
+}
+
+#actualWeatherIcon {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#actualTemperatur {
+    font-size: 1.8rem;
+}
+
+#actualRainChance {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #0075e2;
+}
+
+/* The App - Rightside */
+
+.appRightSide {
+    display: grid;
+    grid-template: 30px 1fr 30px 1fr 30px 1fr / 1fr;
+    align-items: center;
+    row-gap: 5px;
+}
+
+.dayContainer {
+    display: grid;
+    grid-template: auto / 1fr 1fr 1fr 1fr;
+    align-self: stretch;
+    column-gap: 30px;
+}
+
+.dayTimeContainer {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+img {
+    height: auto;
+    width: 50px;
+}
+
+.dayContainer {
+    box-shadow: 0px 1px 3px 0px #00000030;
+    padding: 15px 20px;
+    border-radius: 30px;
+    background-color: #f8f8f8;
+}
+
+.dayTimeContainer {
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.dayTime {
+    font-weight: bold;
+}
+
+.dayRainChance {
+    margin-top: 3px;
+    color: #509ce4;
+}
+
+.dateDay {
+    font-weight: bold;
+    margin-left: 20px;
+    
+}
+
+/* dialog */
+
+dialog::backdrop {
+    background-color: #00000050;
+  }
+
+dialog {
+    border: none;
+    overflow: hidden;
+    background-color: #00000000;
+    padding: 200px;
+}
+
+.loader {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    border: 45px solid rgba(0, 0, 0, 0.3);
+    border-left-color: var(--mainColor);
+    animation: spin 1s linear infinite;
+  }
+
+  dialog:focus {
+	outline: none;
+}
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg); /* Startposition */
+    }
+    100% {
+      transform: rotate(360deg); /* Endposition */
+    }
+  }
+
+  #errorLoader {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    border: 45px solid #ff3030;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #errorMsg {
+    position: absolute;
+    top: -160px;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #ff3030;
+    border-radius: 30px;
+    padding: 20px;
+    white-space: nowrap;
+  }
+
+  #errorBtn {
+    min-width: 140px;
+    border-radius: 30px;
+    background-color: #ff303000;
+    background-color: #ff3030;
+    color: white;
+    font-size: 2rem;
+  }
+
+  #errorBtn:hover {
+    background-color: #b92323;
+  }
 
 
 /* Footer */
