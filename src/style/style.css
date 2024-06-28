@@ -149,7 +149,6 @@ main p {
 
 #actualRainChance {
     margin-top: 30px;
-    margin-bottom: 20px;
     color: #0075e2;
 }
 
@@ -199,6 +198,10 @@ img {
 .dayRainChance {
     margin-top: 3px;
     color: #509ce4;
+}
+
+.dayRainChance, .dayHumidity, .dayWind {
+    font-size: 0.8rem;
 }
 
 .dateDay {
