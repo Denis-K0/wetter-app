@@ -1,310 +1,80 @@
-/* Skelett */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+/* CSS-Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS-Reset End */
+
+/* || SKELETT */
 
 html, body {
-    height: 100%;
-    margin: 0%;
-    --mainColor: #ffe38f;
-    color: #222;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth; 
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--secondaryColor);
+    --primaryColor: #132434;
+    --primaryColor2: #152A3E;
+    --secondaryColor: #FFFFFF;
+    --accentColor: #ffd470;
+    --filterWhite: invert(100%) sepia(0%) saturate(7500%) hue-rotate(43deg) brightness(102%) contrast(115%);
+    --filterYellow: invert(89%) sepia(83%) saturate(497%) hue-rotate(316deg) brightness(98%) contrast(106%);
+    /* Prevent highlighting on Touchscreens */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent the auto color change of Inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s !important;
 }
 
 body {
-    display: grid;
-    grid-template: 100px 1fr 80px / auto;
-}
-
-p {
-    margin: 0px;
-    padding: 0px;
-}
-
-/* Header */
-
-header {
-    position: relative;
-    display: grid;
-    grid-template-rows: 100px;
-    grid-template-columns: 1fr 400px;
-    align-items: center;
-    box-shadow: 0px 1px 3px 0px #00000010;
-    padding: 0px 15vh;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-nav {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 30px;
-}
-
-button{
-    min-width: 200px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 30px;
-    padding: 10px;
-    border: none;
-    background-color: var(--mainColor);
-}
-
-button:hover {
-    background-color: #e0c36b;
-}
-
-button:focus {
-	outline: none;
-}
-
-input {
-	border: 1px solid #E5E7EB;
-	border-radius: 30px;
-	font-size: 0.9rem;
-	width: 168px;
-	padding: 15px 15px;
-}
-
-input:focus {
-	outline: none;
-}
-
-/* Main */
-
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000010;
-}
-
-.appContainer {
-    background-color: white;
-    box-shadow: 0px 1px 3px 0px #00000010;
-    border-radius: 20px;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto;
-    padding: 50px;
-    gap: 75px;
-}
-
-main p {
-    color: #333;
-}
-
-/* The App - Leftside */
-
-.appLeftSide {
-    display: grid;
-    grid-template: 115px 70px auto auto auto / auto;
-    justify-items: center;
-    align-items: center;
-}
-
-.appLeftSide p {
-    font-weight: bold;
-}
-
-.appHeaderContainer {
-    width: min-content;
-    display: grid;
-}
-
-#city {
-    color: #222;
-    font-size: 4rem; /* Startwert für die Schriftgröße */
-    white-space: nowrap;
-}
-
-#country {
-    background-color: var(--mainColor);
-    padding: 2px 10px;
-    font-size: 1.6rem;
-    border-radius: 30px;
-    justify-self: right;
-    align-self: start;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #222;
-    text-align: center;
-    white-space: nowrap;
-}
-
-#actualDateAndTime {
-    font-size: 2.5rem;
-    align-self: end;
-}
-
-#actualWeatherIcon {
-    width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#actualTemperatur {
-    font-size: 1.8rem;
-}
-
-#actualRainChance {
-    margin-top: 30px;
-    color: #0075e2;
-}
-
-/* The App - Rightside */
-
-.appRightSide {
-    display: grid;
-    grid-template: 30px 1fr 30px 1fr 30px 1fr / 1fr;
-    align-items: center;
-    row-gap: 5px;
-}
-
-.dayContainer {
-    display: grid;
-    grid-template: auto / 1fr 1fr 1fr 1fr;
-    align-self: stretch;
-    column-gap: 30px;
-}
-
-.dayTimeContainer {
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-}
-
-img {
-    height: auto;
-    width: 80px;
-}
-
-.dayContainer {
-    box-shadow: 0px 1px 3px 0px #00000030;
-    padding: 15px 20px;
-    border-radius: 30px;
-    background-color: #f8f8f8;
-}
-
-.dayTimeContainer {
-    align-items: center;
-    font-size: 0.9rem;
-}
-
-.dayTime {
-    font-weight: bold;
-}
-
-.dayRainChance {
-    margin-top: 3px;
-    color: #509ce4;
-}
-
-.dayRainChance, .dayHumidity, .dayWind {
-    font-size: 0.8rem;
-}
-
-.dateDay {
-    font-weight: bold;
-    margin-left: 20px;
-    
-}
-
-.dayWind, .dayHumidity {
-    display: none;
-}
-
-/* dialog */
-
-dialog::backdrop {
-    background-color: #00000050;
-  }
-
-dialog {
-    border: none;
-    overflow: hidden;
-    background-color: #00000000;
-    padding: 200px;
-}
-
-.loader {
-    width: 20vh;
-    height: 20vh;
-    border-radius: 50%;
-    border: 45px solid rgba(0, 0, 0, 0.3);
-    border-left-color: var(--mainColor);
-    animation: spin 1s linear infinite;
-  }
-
-  dialog:focus {
-	outline: none;
-}
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg); /* Startposition */
-    }
-    100% {
-      transform: rotate(360deg); /* Endposition */
-    }
-  }
-
-  #errorLoader {
-    width: 20vh;
-    height: 20vh;
-    border-radius: 50%;
-    border: 45px solid #ff3030;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #errorMsg {
-    position: absolute;
-    top: -160px;
-    text-align: center;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background-color: #ff3030;
-    border-radius: 30px;
-    padding: 20px;
-    white-space: nowrap;
-  }
-
-  #errorBtn {
-    min-width: 140px;
-    border-radius: 30px;
-    background-color: #ff303000;
-    background-color: #ff3030;
-    color: white;
-    font-size: 2rem;
-  }
-
-  #errorBtn:hover {
-    background-color: #b92323;
-  }
-
-
-/* Footer */
-
-footer {
-    position: relative;
-    box-shadow: 0px -1px 3px 0px #00000010;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 0.8rem;
-}
-
-footer > a {
-    color: #222;
-    text-decoration: none;
-}
-
-footer > a:hover {
-    color: #868686;
+    background: var(--primaryColor2);
+    background: linear-gradient(0deg, #152737 0%, #34618B 100%);
 }

@@ -6,7 +6,7 @@
     <title>Wetter App</title>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <p>Wetter App</p>
         <nav>
             <input id="locationInput" type="text" placeholder="Das Wetter in ...">
@@ -153,6 +153,169 @@
     <footer>
         <p>"Wetter App" by DK</p>
         <a href="https://www.amcharts.com" target="_blank" rel="noopener noreferrer">Icons created by amCharts</a>
-    </footer>
+    </footer> -->
+
+    <div class="appContainer">
+        <header class="headerWeatherApp">
+            <div class="appName">
+                <p class="appNameFirstPart"></p>
+                <appNameSecondPart></appNameSecondPart>
+            </div>
+            <search class="searchCityInputContainer">
+                <img src="" alt="" class="searchCityImg">
+                <input type="text" class="searchCityInput">
+            </search>
+            <img src="" alt="" class="closeWeatherAppImg"></img>
+        </header>
+        <main class="weatherAppMain">
+            <section class="weatherAppHome">
+                <div class="weatherAppHeadlineContainer">
+                    <div class="weatherAppHeadline">
+                        <h1 class="cityName"></h1>
+                        <h2 class="countryName"></h2>
+                    </div>
+                </div>
+                <article class="currentWeather">
+                    <img src="" alt="" class="currentWeatherIcon">
+                    <div class="currentWeatherData01">
+                        <p class="currentWeatherDescription">Regenerisch-Gewitter-Schnee</p>
+                        <p class="currentWeatherTemperature">24.4°</p>
+                        <p class="currentTime">13.59 - Aktuell</p>
+                    </div>
+                    <div class="currentWeatherData02">
+                        <figure class="currentRainCance">
+                            <img src="" alt="" class="currentRainChanceIcon">
+                            <p class="currentRainChancePercent">87%</p>
+                            <figcaption class="currentRainChanceCaption">Niederschlag</figcaption>
+                        </figure>
+                        <figure class="currentHumidity">
+                            <img src="" alt="" class="currentHumidityIcon">
+                            <p class="currentHumidityPercent">33%</p>
+                            <figcaption class="currentHumidityCaption">Luftfeuchte</figcaption>
+                        </figure>
+                        <figure class="currentWind">
+                            <img src="" alt="" class="currentWindIcon">
+                            <p class="currentWindPerHour">7 km/h</p>
+                            <figcaption class="currentWindCaption">Windstärke</figcaption>
+                        </figure>
+                    </div>
+                </article>
+                <article class="3DaysOverview">
+                    <h1 class="3DaysOverviewHeadline">3-Tages Übersicht</h1>
+                    <button class="day01Btn dayBtn">
+                        <h2 class="day01Name dayName">Freitag</h2>
+                        <img src="" alt="" class="day01WeatherIcon dayWeatherIcon">
+                        <p class="day01MaxTemperature dayMaxTemperature">24.3°</p>
+                        <p class="day01MinTemperature dayMinTemperature">12.3°</p>
+                    </button>
+                    <button class="day02Btn dayBtn">
+                        <h2 class="day02Name dayName">Samstag</h2>
+                        <img src="" alt="" class="day02WeatherIcon dayWeatherIcon">
+                        <p class="day02MaxTemperature dayMaxTemperature">24.3°</p>
+                        <p class="day02MinTemperature dayMinTemperature">12.3°</p>
+                    </button>
+                    <button class="day03Btn dayBtn">
+                        <h2 class="day03Name dayName">Sonntag</h2>
+                        <img src="" alt="" class="day03WeatherIcon dayWeatherIcon">
+                        <p class="day03MaxTemperature dayMaxTemperature">24.3°</p>
+                        <p class="day03MinTemperature dayMinTemperature">12.3°</p>
+                    </button>
+                </article>
+            </section>
+            <section class="3DaysOverviewDay">
+                <div class="3DaysOverviewHeadlineContainer">
+                    <button class="swipeLeft">
+                        <img src="" alt="" class="arrowLeftIcon">
+                    </button>
+                    <h1 class="3DaysOverviewHeadline"></h1>
+                    <h2 class="3DaysOverviewDayName">Freitag</h2>
+                    <button class="swipeRight">
+                        <img src="" alt="" class="arrowRightIcon">
+                    </button>
+                </div>
+                <article class="dayTime01Article dayTimeArticle">
+                    <h3 class="dayTime">Morgens</h3>
+                    <figure class="dayTimeWeather">
+                        <img src="" alt="" class="dayTimeWeatherIcon">
+                        <figcaption class="dayTimeTemperature">12.4°</figcaption>
+                    </figure>
+                    <figure class="dayTimeRainChance">
+                        <img src="" alt="" class="dayTimeRainChanceIcon">
+                        <figcaption class="dayTimeRainChanceValue">44%</figcaption>
+                    </figure>
+                    <figure class="dayHumidity">
+                        <img src="" alt="" class="dayTimeHumidityIcon">
+                        <figcaption class="dayTimeHumidityValue">22%</figcaption>
+                    </figure>
+                    <figure class="dayTimeWind">
+                        <img src="" alt="" class="dayTimeWindIcon">
+                        <figcaption class="dayTimeWindValue">44%</figcaption>
+                    </figure>
+                </article>
+                <article class="dayTime02Article dayTimeArticle">
+                    <h3 class="dayTime">Mittags</h3>
+                    <figure class="dayTimeWeather">
+                        <img src="" alt="" class="dayTimeWeatherIcon">
+                        <figcaption class="dayTimeTemperature">12.4°</figcaption>
+                    </figure>
+                    <figure class="dayTimeRainChance">
+                        <img src="" alt="" class="dayTimeRainChanceIcon">
+                        <figcaption class="dayTimeRainChanceValue">44%</figcaption>
+                    </figure>
+                    <figure class="dayHumidity">
+                        <img src="" alt="" class="dayTimeHumidityIcon">
+                        <figcaption class="dayTimeHumidityValue">22%</figcaption>
+                    </figure>
+                    <figure class="dayTimeWind">
+                        <img src="" alt="" class="dayTimeWindIcon">
+                        <figcaption class="dayTimeWindValue">44%</figcaption>
+                    </figure>
+                </article>
+                <article class="dayTime03Article dayTimeArticle">
+                    <h3 class="dayTime">Abends</h3>
+                    <figure class="dayTimeWeather">
+                        <img src="" alt="" class="dayTimeWeatherIcon">
+                        <figcaption class="dayTimeTemperature">12.4°</figcaption>
+                    </figure>
+                    <figure class="dayTimeRainChance">
+                        <img src="" alt="" class="dayTimeRainChanceIcon">
+                        <figcaption class="dayTimeRainChanceValue">44%</figcaption>
+                    </figure>
+                    <figure class="dayHumidity">
+                        <img src="" alt="" class="dayTimeHumidityIcon">
+                        <figcaption class="dayTimeHumidityValue">22%</figcaption>
+                    </figure>
+                    <figure class="dayTimeWind">
+                        <img src="" alt="" class="dayTimeWindIcon">
+                        <figcaption class="dayTimeWindValue">44 km/h</figcaption>
+                    </figure>
+                </article>
+                <article class="dayTime04Article dayTimeArticle">
+                    <h3 class="dayTime">Nachts</h3>
+                    <figure class="dayTimeWeather">
+                        <img src="" alt="" class="dayTimeWeatherIcon">
+                        <figcaption class="dayTimeTemperature">12.4°</figcaption>
+                    </figure>
+                    <figure class="dayTimeRainChance">
+                        <img src="" alt="" class="dayTimeRainChanceIcon">
+                        <figcaption class="dayTimeRainChanceValue">44%</figcaption>
+                    </figure>
+                    <figure class="dayHumidity">
+                        <img src="" alt="" class="dayTimeHumidityIcon">
+                        <figcaption class="dayTimeHumidityValue">22%</figcaption>
+                    </figure>
+                    <figure class="dayTimeWind">
+                        <img src="" alt="" class="dayTimeWindIcon">
+                        <figcaption class="dayTimeWindValue">44 km/h</figcaption>
+                    </figure>
+                </article>
+                <div class="DotsContainer">
+                    <div class="dot01"></div>
+                    <div class="dot02"></div>
+                    <div class="dot03"></div>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
