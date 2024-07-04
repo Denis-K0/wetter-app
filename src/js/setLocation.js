@@ -4,7 +4,7 @@ import setWeatherData from "./setWeatherData";
 
 function setLocation() {
     const selector = {
-        submitButton: document.getElementById('submitBtn'),
+        submitButton: document.getElementById('submitLocationBtn'),
         locationInput: document.getElementById('locationInput')
     };
 

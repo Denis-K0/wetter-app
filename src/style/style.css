@@ -59,8 +59,12 @@ html, body {
     color: var(--secondaryColor);
     --primaryColor: #132434;
     --primaryColor2: #152A3E;
+    --primaryColor3: #254A6C;
     --secondaryColor: #FFFFFF;
     --accentColor: #ffd470;
+    --rainColor: #62A6E4;
+    --humidityColor: #CDE7FF;
+    --windColor: #FFEBBB;
     --filterWhite: invert(100%) sepia(0%) saturate(7500%) hue-rotate(43deg) brightness(102%) contrast(115%);
     --filterYellow: invert(89%) sepia(83%) saturate(497%) hue-rotate(316deg) brightness(98%) contrast(106%);
     /* Prevent highlighting on Touchscreens */
@@ -77,4 +81,551 @@ input:-webkit-autofill:focus {
 body {
     background: var(--primaryColor2);
     background: linear-gradient(0deg, #152737 0%, #34618B 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 100%;
+}
+
+/* || HEADER */
+
+.headerWeatherApp {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: var(--primaryColor2);
+    padding: 12px 20px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.appNameContainer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.appNameFirstPart, .appNameSecondPart {
+    font-size: 1.5rem;
+    font-family: 'Russo One', 'Roboto', sans-serif;
+}
+
+.appNameSecondPart {
+    background-color: var(--accentColor);
+    color: var(--primaryColor);
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.searchCityInputContainer {
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    border: 2px solid var(--primaryColor3);
+    flex: 1;
+    padding: 5px 15px;
+    gap: 10px;
+}
+
+.searchCityBtn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchCityIcon {
+    filter: var(--filterWhite);
+    width: 24px;
+    height: 24px;
+}
+
+.searchCityInput {
+    background-color: transparent;
+    border: none;
+    color: var(--secondaryColor);
+    width: 100%;
+}
+
+.searchCityInput::placeholder {
+    color: var(--secondaryColor);
+} 
+
+.searchCityInput:focus {
+    outline: none;
+}
+
+.closeWeatherAppIcon {
+    filter: var(--filterWhite);
+    width: 30px;
+    height: 30px;
+}
+
+/* || MAIN */
+
+.weatherAppMain {
+    background-color: var(--primaryColor);
+    padding: 30px;
+    border-radius: 0 0px 20px 20px;
+    display: flex;
+    gap: 60px;
+}
+
+/* || SECTION - Home */
+
+.weatherAppHome {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.weatherAppHeadlineContainer {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.cityName {
+    font-family: 'Russo One', 'Roboto', sans-serif;
+    font-size: 3rem;
+}
+
+.countryName {
+    font-family: 'Russo One', 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    color: var(--primaryColor);
+    background-color: var(--accentColor);
+    border-radius: 5px;
+    padding: 3px 6px 1px;
+}
+
+/* || SECTION - Home - Current Weather Article */
+
+.currentWeather {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column;
+    gap: 30px;
+}
+
+.currentWeatherIcon {
+    transform: scale(2);
+    height: 140px;
+    margin-bottom: -15px;
+}
+
+.currentWeatherData01 {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--primaryColor);
+    z-index: 2;
+}
+
+.currentWeatherDescription {
+    font-size: 0.9rem;
+    padding-top: 1px;
+    margin-bottom: -3px;
+}
+
+.currentWeatherTemperature {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.currentTime {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding-top: 1px;
+    margin-bottom: -3px;
+}
+
+.currentWeatherData02 {
+    display: flex;
+    gap: 15px;
+}
+
+.currentHumidity, .currentRainChance, .currentWind {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.currentHumidityIcon, .currentRainChanceIcon, .currentWindIcon {
+    width: 35px;
+    height: 35px;
+}
+
+.currentHumidity {
+    color: var(--humidityColor);
+}
+
+.currentRainChance {
+    color: var(--rainColor);
+}
+
+.currentWind {
+    color: var(--windColor);
+}
+
+.currentConditionValue {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.currentConditionCaption {
+    font-size: 0.9rem;
+}
+
+/* || SECTION - Home - 3 Days Overview */
+
+.threeDaysOverview {
+    display: grid;
+    grid-template: 1fr auto / auto auto auto;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.threeDaysOverviewHeadline {
+    width: 100%;
+    text-align: center;
+    color: var(--accentColor);
+    font-weight: bold;
+    grid-area: 1 / 1 / 2 / 4;
+}
+
+.dayBtn {
+    display: grid;
+    grid-template: auto auto auto / auto auto;
+    align-items: center;
+    background-color: var(--primaryColor2);
+    border: none;
+    padding: 15px 15px;
+    color: var(--secondaryColor);
+    gap: 5px;
+    border-radius: 20px;
+}
+
+.dayName {
+    grid-area: 1 / 1 / 2 / 3;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.dayWeatherIcon {
+    grid-area: 2 / 1 / 4 / 2 ;
+    width: 40px;
+    transform: scale(1.4);
+}
+
+.dayMaxTemperature {
+    grid-area: 2 / 2 / 3 / 3;
+    font-weight: bold;
+    margin-bottom: -5px;
+    text-align: left;
+}
+
+.dayMinTemperature {
+    grid-area: 3 / 2 / 4 / 3;
+    color: #909090;
+    text-align: left;
+    margin-top: -5px;
+}
+
+/* || SECTION - 3 Days Overview */
+
+.threeDaysOverviewDay {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.threeDaysOverviewDayHeadlineContainer {
+    display: grid;
+    grid-template: auto auto 1fr / auto auto auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.swipeLeft {
+    grid-area: 1 / 1 / 3 / 2;
+    background-color: transparent;
+    border: none;
+
+}
+
+.arrowLeftIcon {
+    width: 50px;
+    height: 50px;
+    filter: var(--filterWhite);
+
+}
+
+.threeDaysOverviewDayHeadline {
+    grid-area: 1 / 2 / 2 / 3;
+    text-align: center;
+    color: var(--accentColor);
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+
+.threeDaysOverviewDayName {
+    grid-area: 2 / 2 / 3 / 3;
+    text-align: center;
+    font-family: 'Russo One', 'Roboto', sans-serif;
+    font-size: 1.5rem;
+}
+
+.swipeRight {
+    grid-area: 1 / 3 / 3 / 4;
+    background-color: transparent;
+    border: none;
+}
+
+.arrowRightIcon {
+    width: 50px;
+    height: 50px;
+    filter: var(--filterWhite);
+}
+
+.dotsContainer {
+    grid-area: 3 / 1 / 4 / 4;
+    display: flex;
+    gap: 10px;
+    justify-self: center;
+    margin-top: 10px;
+}
+
+.dot {
+    background-color: var(--secondaryColor);
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+}
+
+.threeDaysOverviewArticleContainer {
+    display: grid;
+    grid-template: auto auto / auto auto;
+    gap: 10px;
+}
+
+.dayTimeArticle {
+    display: grid;
+    grid-template: auto auto auto auto / auto auto;
+    background-color: var(--primaryColor2);
+    border-radius: 20px;
+    padding: 20px 15px;
+}
+
+.dayTime {
+    grid-area: 1 / 1 / 2 / 3;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dayTimeArticle > figure {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.dayTimeArticle > figure > figcaption {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.dayTimeArticle> :nth-child(3) > figcaption, .hourRainChanceValue {
+    color: var(--rainColor);
+}
+
+.dayTimeArticle> :nth-child(4) > figcaption, .hourHumidityValue {
+    color: var(--humidityColor);
+}
+
+.dayTimeArticle> :nth-child(5) > figcaption, .hourWindValue {
+    color: var(--windColor);
+}
+
+.kmhIcon {
+    width: 15px;
+    margin-left: 2px;
+}
+
+.dayTimeConditionIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.dayTimeWeather {
+    grid-area: 2 / 1 / 5 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    gap: 5px;
+    margin-right: 10px;
+}
+
+.dayTimeWeatherIcon {
+    width: 60px;
+    height: 60px;
+    transform: scale(1.5);
+}
+
+.dayTimeArticle > figure > .dayTimeTemperature {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.dayTimeRainChance {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.dayTimeHumidity {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+.dayTimeWind {
+    grid-area: 4 / 2 / 5 / 3;
+}
+
+/* || SECTION - Home - 3 Days Overview - Full Day Overview */
+
+.fullDayOverview {
+    position: relative;
+    max-width: 400px;
+    background-color: var(--primaryColor2);
+    border-radius: 20px;
+}
+
+.transparency-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primaryColor2);
+    border-radius: 20px;
+    z-index: 2;
+    outline: none;
+    pointer-events: none;
+    background: rgb(21,42,62);
+    background: -moz-linear-gradient(90deg, rgba(21,42,62,1) 7%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(21,42,62,1) 93%);
+    background: -webkit-linear-gradient(90deg, rgba(21,42,62,1) 7%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(21,42,62,1) 93%);
+    background: linear-gradient(90deg, rgba(21,42,62,1) 7%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(21,42,62,1) 93%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#152a3e",endColorstr="#152a3e",GradientType=1);
+}
+
+.swipeBtn {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    padding: 0;
+}
+
+.swipeRightFullDayOverviewBtn {
+    right: 0;
+}
+
+.arrowIcon {
+    width: 30px;
+    filter: var(--filterWhite);
+}
+
+.fullDayOverviewList {
+    display: flex;
+    gap: 15px;
+    padding: 16px;
+    list-style: none;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.fullDayOverviewList::-webkit-scrollbar {
+    display: none;
+  }
+
+.hour {
+    display: grid;
+    grid-template: auto auto / auto auto;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 100%;
+    scroll-snap-align: center;
+}
+
+.hourHeadline {
+    grid-area: 1 / 1 / 2 / 3;
+    margin-bottom: 5px;
+}
+
+.hourFigure {
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    gap: 5px;
+    align-self: center;
+}
+
+.hourHeadline, .hourTemperature {
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.hourConditionContainer {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.hourIcon {
+    width: 40px;
+    height: 40px;
+    transform: scale(1.5);
+}
+
+.hourHumidityFigure, .hourRainChanceFigure, .hourWindFigure {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+    gap: 4px;
+}
+
+.hourWindIcon, .hourHumidityIcon, .hourRainChanceIcon {
+    width: 20px;
+}
+
+.fullDayOverviewList > * > * > * > .kmhIcon {
+    width: 13px;
+    margin-left: -1px;
+}
+
+.hourConditionContainer {
+   
 }
