@@ -512,6 +512,8 @@ body {
     max-width: 400px;
     background-color: var(--primaryColor2);
     border-radius: 20px;
+    overflow: hidden;
+    padding: 0 1px;
 }
 
 .transparency-bg {
@@ -519,7 +521,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: var(--primaryColor2);
-    border-radius: 20px;
+    
     z-index: 2;
     outline: none;
     pointer-events: none;
@@ -552,13 +554,21 @@ body {
 
 .fullDayOverviewList {
     display: flex;
-    gap: 15px;
-    padding: 16px;
     list-style: none;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.fullDayOverviewList > :nth-child(1) {
+    margin-left: 300%;
+}
+
+.fullDayOverviewList > :nth-last-child(1) {
+    margin-right: 300%;
 }
 
 .fullDayOverviewList::-webkit-scrollbar {
@@ -627,5 +637,28 @@ body {
 }
 
 .hourConditionContainer {
-   
+    display: none;
+}
+
+.hour {
+    transition: transform 0.3s ease-in;
+    padding: 15px 10px;
+}
+
+.hour.show {
+    background-color: var(--primaryColor3);
+    transform: scale(1.2);
+}
+
+.conditionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 4px 0;
+    background: rgb(21,42,62);
+    background: -moz-linear-gradient(90deg, rgba(21,42,62,1) 7%, rgba(37,74,108,1) 25%, rgba(37,74,108,1) 75%, rgba(21,42,62,1) 93%);
+    background: -webkit-linear-gradient(90deg, rgba(21,42,62,1) 7%, rgba(37,74,108,1) 25%, rgba(37,74,108,1) 75%, rgba(21,42,62,1) 93%);
+    background: linear-gradient(90deg, rgba(21,42,62,1) 7%, rgba(37,74,108,1) 25%, rgba(37,74,108,1) 75%, rgba(21,42,62,1) 93%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#152a3e",endColorstr="#152a3e",GradientType=1);
 }

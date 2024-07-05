@@ -1,4 +1,5 @@
 import getWeatherData from "./getWeatherData";
+import { FullDayOverview } from "./ui";
 
 "use strict";
 
@@ -218,10 +219,19 @@ function addDataToPlace(data) {
 }
 
 function setWeatherData(selectedLocation = "Göttingen") {
+    const firstStart = true;
     openLoading();
     setTimeout(() => {
         getWeatherData(selectedLocation)
-            .then(data => addDataToPlace(data))
+            .then(data => {
+                addDataToPlace(data);
+                return data;
+            })
+            .then(data => {
+                FullDayOverview.weatherData = data;
+                FullDayOverview.addScrollEvent();
+                FullDayOverview.addClassCenteredElement(firstStart, firstStart);
+            })
             .catch(error)
             .finally(closeLoading);
     }, 1000);
@@ -454,12 +464,9 @@ function updateDayOverviewWeatherData(data) {
     const hours = data.forecast.forecastday[0].hour;
     
     hours.forEach((hourData, index) => {
-        const hour = String(index).padStart(2, '0'); // Formatierung auf zwei Stellen
+        const hour = String(index).padStart(2, '0'); // Formate to 2 numbers
         document.getElementById(`hour${hour}Temperature`).textContent = `${hourData.temp_c}°`;
         document.getElementById(`hour${hour}Icon`).src = chooseImg(hourData.condition.code, decideDayOrNight(hourData.condition.icon));
-        document.getElementById(`hour${hour}RainChanceValue`).textContent = `${hourData.chance_of_rain} %`;
-        document.getElementById(`hour${hour}HumidityValue`).textContent = `${hourData.humidity} %`;
-        document.getElementById(`hour${hour}WindValue`).textContent = `${hourData.wind_kph}`;
     });
 }
 
