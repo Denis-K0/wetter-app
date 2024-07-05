@@ -1,4 +1,4 @@
-import setWeatherData from "./setWeatherData";
+import { DataPlacement, weatherData } from "./setWeatherData";
 
 "use strict";
 
@@ -8,12 +8,12 @@ const SearchBar = {
     addEvents() {
         this.submitButton.addEventListener('click', () => {
             const selectedLocation = this.locationInput.value;
-            setWeatherData(selectedLocation);
+            DataPlacement.setWeatherData(selectedLocation);
         });
         this.locationInput.addEventListener('keypress', (event) => {
             if (event.key === "Enter" || event.keyCode === 13) {
                 const selectedLocation = this.locationInput.value;
-                setWeatherData(selectedLocation);
+                DataPlacement.setWeatherData(selectedLocation);
             }
         });
     },
@@ -25,7 +25,6 @@ const FullDayOverview = {
     itemWidth: document.querySelector(".hour").offsetWidth,
     list: document.getElementById('fullDayOverviewList'),
     listItems: document.querySelectorAll('.hour'),
-    weatherData: null,
     centeredElement: null,
     start() {
         this.addEvents();
@@ -98,21 +97,7 @@ const FullDayOverview = {
 
 
         // Show the Conditions of the centered Element
-        FullDayOverview.setConditions(centeredElement);
-    },
-    setConditions(element, day) {
-        if (!FullDayOverview.weatherData) return; // No Data = Nothing to do
-
-        const hours = FullDayOverview.weatherData.forecast.forecastday[0].hour;
-    
-        hours.forEach((hourData, index) => {
-            const hour = String(index).padStart(2, '0'); // Formate to 2 numbers
-            if (!element.classList.contains(hour)) return; // Right Hour? Continue 
-            document.getElementById(`hourRainChanceValue`).textContent = `${hourData.chance_of_rain} %`;
-            console.log(`${hourData.chance_of_rain} %`);
-            document.getElementById(`hourHumidityValue`).textContent = `${hourData.humidity} %`;
-            document.getElementById(`hourWindValue`).textContent = `${hourData.wind_kph}`;
-        });
+        DataPlacement.setConditions(centeredElement);
     },
     handleClick(direction) {
         if(direction === "previous") {
@@ -123,4 +108,21 @@ const FullDayOverview = {
     },
 };
 
-export { SearchBar, FullDayOverview };
+const DayBtns = {
+    day01Btn: document.getElementById('day01Btn'),
+    day02Btn: document.getElementById('day02Btn'),
+    day03Btn: document.getElementById('day03Btn'),
+    addEvents() {
+        this.day01Btn.addEventListener('click', () => {
+            DataPlacement.changeDay(0);
+        });
+        this.day02Btn.addEventListener('click', () => {
+            DataPlacement.changeDay(1);
+        });
+        this.day03Btn.addEventListener('click', () => {
+            DataPlacement.changeDay(2);
+        });
+    },
+};
+
+export { SearchBar, FullDayOverview, DayBtns };

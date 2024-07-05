@@ -1,10 +1,11 @@
 import "./style/style.css";
-import setWeatherData from "./js/setWeatherData";
-import { SearchBar, FullDayOverview } from "./js/ui";
+import { DataPlacement } from "./js/setWeatherData";
+import { SearchBar, FullDayOverview, DayBtns } from "./js/ui";
 
 "use strict";
 
 
-setWeatherData();
+DataPlacement.setWeatherData();
 SearchBar.addEvents();
 FullDayOverview.start();
+DayBtns.addEvents();

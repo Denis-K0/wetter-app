@@ -319,6 +319,10 @@ body {
     border-radius: 20px;
 }
 
+.dayBtn.active {
+    background-color: var(--primaryColor3);
+}
+
 .dayName {
     grid-area: 1 / 1 / 2 / 3;
     font-weight: bold;
@@ -631,9 +635,8 @@ body {
     width: 20px;
 }
 
-.fullDayOverviewList > * > * > * > .kmhIcon {
+.conditionContainer > * >.kmhIcon {
     width: 13px;
-    margin-left: -1px;
 }
 
 .hourConditionContainer {
