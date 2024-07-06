@@ -123,6 +123,36 @@ const DayBtns = {
             DataPlacement.changeDay(2);
         });
     },
+    changeClass (day) {
+        this.day01Btn.classList.remove('active');
+        this.day02Btn.classList.remove('active');
+        this.day03Btn.classList.remove('active');
+
+        document.getElementById(`day0${day + 1}Btn`).classList.add('active');
+    }
 };
 
-export { SearchBar, FullDayOverview, DayBtns };
+const ThreeDaysOverviewHeadline = {
+    arrowLeft: document.getElementById('arrowLeft'),
+    arrowRight: document.getElementById('arrowRight'),
+    dot01: document.getElementById('dot01'),
+    dot02: document.getElementById('dot02'),
+    dot03: document.getElementById('dot03'),
+    addEvents () {
+        this.arrowLeft.addEventListener('click', () => {
+            DataPlacement.changeDay(-1, 'arrow');
+        });
+        this.arrowRight.addEventListener('click', () => {
+            DataPlacement.changeDay(1, 'arrow');
+        });
+    },
+    changeDotClass (day) {
+        this.dot01.classList.remove('active');
+        this.dot02.classList.remove('active');
+        this.dot03.classList.remove('active');
+
+        document.getElementById(`dot0${day + 1}`).classList.add('active');
+    },
+}
+
+export { SearchBar, FullDayOverview, DayBtns, ThreeDaysOverviewHeadline };

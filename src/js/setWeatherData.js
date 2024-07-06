@@ -1,5 +1,5 @@
 import getWeatherData from "./getWeatherData";
-import { FullDayOverview, WeatherData } from "./ui";
+import { FullDayOverview, DayBtns, ThreeDaysOverviewHeadline } from "./ui";
 
 "use strict";
 
@@ -61,7 +61,6 @@ const DataPlacement = {
                     return data;
                 })
                 .then(data => {
-                    console.log(data);
                     weatherData = data;
                     FullDayOverview.addScrollEvent();
                     FullDayOverview.addClassCenteredElement(firstStart, firstStart);
@@ -393,14 +392,22 @@ const DataPlacement = {
             const hour = String(index).padStart(2, '0'); // Formate to 2 numbers
             if (!element.classList.contains(hour)) return; // Right Hour? Continue 
             document.getElementById(`hourRainChanceValue`).textContent = `${hourData.chance_of_rain} %`;
-            console.log(`${hourData.chance_of_rain} %`);
             document.getElementById(`hourHumidityValue`).textContent = `${hourData.humidity} %`;
             document.getElementById(`hourWindValue`).textContent = `${hourData.wind_kph}`;
         });
     },
-    changeDay(day) {
-        // Change the day
+    changeDay(day, arrow) {
+        // Handle right day, when a arrow was clicked
+        if (arrow) {
+            day = this.showDay + day;
+            if(day === 3) day = 0;
+            if(day === -1) day = 2;
+        };
+        
         this.showDay = day;
+
+        DayBtns.changeClass(day);
+        ThreeDaysOverviewHeadline.changeDotClass(day);
 
         // Change the data depending to the Day
         this.updateFullDayOverview();

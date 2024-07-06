@@ -420,6 +420,10 @@ body {
     border-radius: 100%;
 }
 
+.dot.active {
+    background-color: var(--accentColor);
+}
+
 .threeDaysOverviewArticleContainer {
     display: grid;
     grid-template: auto auto / auto auto;

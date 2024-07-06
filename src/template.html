@@ -228,17 +228,17 @@
             <section class="threeDaysOverviewDay">
                 <div class="threeDaysOverviewDayHeadlineContainer">
                     <button class="swipeLeft">
-                        <img src="<%=require('./assets/chevron-left.svg')%>" alt="" class="arrowLeftIcon">
+                        <img src="<%=require('./assets/chevron-left.svg')%>" alt="" class="arrowLeftIcon" id="arrowLeft">
                     </button>
                     <h1 class="threeDaysOverviewDayHeadline">3-Tages Übersicht</h1>
                     <h2 class="threeDaysOverviewDayName" id="dateDay"></h2>
                     <button class="swipeRight">
-                        <img src="<%=require('./assets/chevron-right.svg')%>" alt="" class="arrowRightIcon">
+                        <img src="<%=require('./assets/chevron-right.svg')%>" alt="" class="arrowRightIcon" id="arrowRight">
                     </button>
                     <div class="dotsContainer">
-                        <div class="dot01 dot"></div>
-                        <div class="dot02 dot"></div>
-                        <div class="dot03 dot"></div>
+                        <div class="dot01 dot active" id="dot01"></div>
+                        <div class="dot02 dot" id="dot02"></div>
+                        <div class="dot03 dot" id="dot03"></div>
                     </div>
                 </div>
 
