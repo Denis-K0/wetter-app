@@ -65,7 +65,7 @@ const DataPlacement = {
                     FullDayOverview.addScrollEvent();
                     FullDayOverview.addClassCenteredElement(firstStart, firstStart);
                 })
-                // .catch(DataPlacement.error)
+                .catch(DataPlacement.error)
                 .finally(DataPlacement.closeLoading);
         }, 1000);
     },

@@ -231,6 +231,28 @@ const ThreeDaysOverviewWindow = {
     threeDaysOverviewDay: document.getElementById('threeDaysOverviewDay'),
     closeWindowBtn: document.getElementById('closeWindowBtn'),
     searchCityInputContainer: document.getElementById('searchCityInputContainer'),
+    touchStartX: 0,
+    touchEndX: 0,
+    minSwipeDistance: 50,
+    touchStartTime: 0,
+    maxClickDuration: 200,
+    addSwipeEvents() {
+        this.threeDaysOverviewDay.addEventListener('touchstart', (e) => {
+            this.touchStartX = e.changedTouches[0].screenX;
+            this.touchStartTime = new Date().getTime();
+        });
+    
+        this.threeDaysOverviewDay.addEventListener('touchmove', (e) => {
+            this.touchEndX = e.changedTouches[0].screenX;
+        });
+    
+        this.threeDaysOverviewDay.addEventListener('touchend', (e) => {
+            const touchEndTime = new Date().getTime();
+            const touchDuration = touchEndTime - this.touchStartTime;
+            // Check if it was only a click
+            if (touchDuration > this.maxClickDuration) this.handleSwipe();
+        });
+    },
     addEvent () {
         this.closeWindowBtn.addEventListener('click', () => {
             this.removeClasses();
@@ -248,6 +270,16 @@ const ThreeDaysOverviewWindow = {
         this.threeDaysOverviewDay.classList.remove('show');
         this.closeWindowBtn.classList.remove('show');
         this.searchCityInputContainer.classList.remove('hide');
+    },
+    handleSwipe() {
+        const distance = this.touchEndX - this.touchStartX;
+
+        if (Math.abs(distance) >= this.minSwipeDistance) {
+            // Swiped left
+            if (distance < 0) DataPlacement.changeDay(-1, 'arrow');
+            // Swiped right
+            if (distance > 0) DataPlacement.changeDay(1, 'arrow');
+        }
     },
 }
 
