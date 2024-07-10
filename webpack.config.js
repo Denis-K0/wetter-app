@@ -1,5 +1,6 @@
-const path = require("path")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     mode: "development",
@@ -26,9 +27,12 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-           title: "Restaurant Page",
+           title: "Denis Kohleber",
            filename: "index.html",
            template: "src/template.html"
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'style.css',
         }),
     ],
     module: {
@@ -36,9 +40,9 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    "style-loader",
-                    "css-loader",
-                ],  
+                    MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ],
             },
             {
                 test: /\.(png|jpg|svg|gif)$/i,
