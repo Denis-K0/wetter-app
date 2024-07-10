@@ -6,138 +6,7 @@
     <title>Wetter App</title>
 </head>
 <body>
-    <!-- <header>
-        <p>Wetter App</p>
-        <nav>
-            <input id="locationInput" type="text" placeholder="Das Wetter in ...">
-            <button id="submitBtn">Anzeigen</button>
-        </nav>
-    </header>
-    <main>
-        <div class="appContainer">
-            <div class="appLeftSide">
-                <div class="appHeaderContainer">
-                    <p id=city>Wetter</p>
-                    <p id="country">App</p>
-                </div>
-                <p id="actualDateAndTime"></p>
-                <img id="actualWeatherIcon" src="" alt="Wetter Icon">
-                <p id="actualTemperatur">0° 0°</p>
-                <div>
-                    <p id="actualRainChance">Niederschlagswarcheinlichkeit 0%</p>
-                    <p id="actualHumidity">Luftfeuchte: 00%</p>
-                    <p id="actualWind">Wind 10 km/h</p>
-                </div>
-            </div>
-            <div class="appRightSide">
-                <p id="dateDay01" class="dateDay">Wochentag, 00.00.0000</p>
-                <div id="day01Container" class="dayContainer">
-                    <div class="dayTimeContainer01 dayTimeContainer">
-                        <p class="dayTime">Morgens</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day01Icon01">
-                        <p class="dayTemperatur" id="day01Temperatur01">0° 0°</p>
-                        <p id="day01RainChance01" class="dayRainChance">Niederschlag: 00%</p>
-                        <p class="dayHumidity" id="day01Humidity01">Luftfeuchte: 00%</p>
-                        <p class="dayWind" id="day01Wind01">Wind: 10 km/h</p>
-                    </div>
-                    <div class="dayTimeContainer02 dayTimeContainer">
-                        <p class="dayTime">Mittags</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day01Icon02">
-                        <p class="dayTemperatur" id="day01Temperatur02">0° 0°</p>
-                        <p id="day01RainChance02" class="dayRainChance">Niederschlag: 00%</p>
-                        <p class="dayHumidity" id="day01Humidity02">Luftfeuchte: 00%</p>
-                        <p class="dayWind" id="day01Wind02">Wind 10 km/h</p>
-                    </div>
-                    <div class="dayTimeContainer03 dayTimeContainer">
-                        <p class="dayTime">Abends</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day01Icon03">
-                        <p class="dayTemperatur" id="day01Temperatur03">0° 0°</p>
-                        <p id="day01RainChance03" class="dayRainChance">Niederschlag: 0%</p>
-                        <p class="dayHumidity" id="day01Humidity03">Luftfeuchte: 00%</p>
-                        <p class="dayWind" id="day01Wind03">Wind 10 km/h</p>
-                    </div>
-                    <div class="dayTimeContainer04 dayTimeContainer">
-                        <p class="dayTime">Nachts</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day01Icon04">
-                        <p class="dayTemperatur" id="day01Temperatur04">0° 0°</p>
-                        <p id="day01RainChance04" class="dayRainChance">Niederschlag: 0%</p>
-                        <p class="dayHumidity" id="day01Humidity04">Luftfeuchte: 00%</p>
-                        <p class="dayWind" id="day01Wind04">Wind 10 km/h</p>
-                    </div>
-                </div>
-                <p id="dateDay02" class="dateDay">Wochentag, 00.00.0000</p>
-                <div id="day02Container" class="dayContainer">
-                    <div class="dayTimeContainer01 dayTimeContainer">
-                        <p class="dayTime">Morgens</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day02Icon01">
-                        <p class="dayTemperatur" id="day02Temperatur01">0° 0°</p>
-                        <p id="day02RainChance01" class="dayRainChance">Niederschlag: 0%</p>
-                        <p class="dayHumidity" id="day02Humidity01">Luftfeuchte: 00%</p>
-                        <p class="dayWind" id="day02Wind01">Wind 10 km/h</p>
-                    </div>
-                    <div class="dayTimeContainer02 dayTimeContainer">
-                        <p class="dayTime">Mittags</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day02Icon02">
-                        <p class="dayTemperatur" id="day02Temperatur02">0° 0°</p>
-                        <p id="day02RainChance02" class="dayRainChance">Niederschlag: 0%</p>
-                        <p class="dayHumidity" id="day02Humidity02">Luftfeuchte: 00%</p>
-                        <p class="dayWind" id="day02Wind02">Wind 10 km/h</p>
-                    </div>
-                    <div class="dayTimeContainer03 dayTimeContainer">
-                        <p class="dayTime">Abends</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day02Icon03">
-                        <p class="dayTemperatur" id="day02Temperatur03">0° 0°</p>
-                        <p id="day02RainChance03" class="dayRainChance">Niederschlag: 0%</p>
-                        <p class="dayHumidity" id="day02Humidity03">Luftfeuchte: 00%</p>
-                        <p class="dayWind" id="day02Wind03">Wind 10 km/h</p>
-                    </div>
-                    <div class="dayTimeContainer04 dayTimeContainer">
-                        <p class="dayTime">Nachts</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day02Icon04">
-                        <p class="dayTemperatur" id="day02Temperatur04">0° 0°</p>
-                        <p id="day02RainChance04" class="dayRainChance">Niederschlag: 0%</p>
-                        <p class="dayHumidity" id="day02Humidity04">Luftfeuchte: 00%</p>
-                        <p class="dayWind" id="day02Wind04">Wind 10 km/h</p>
-                    </div>
-                </div>
-                <p id="dateDay03" class="dateDay">Wochentag, 00.00.0000</p>
-                <div id="day03Container" class="dayContainer">
-                    <div class="dayTimeContainer01 dayTimeContainer">
-                        <p class="dayTime">Morgens</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day03Icon01">
-                        <p class="dayTemperatur" id="day03Temperatur01">0° 0°</p>
-                        <p id="day03RainChance01" class="dayRainChance">Niederschlag: 0%</p>
-                        <p class="dayHumidity" id="day03Humidity01">Luftfeuchte: 00%</p>
-                        <p class="dayWind" id="day03Wind01">Wind 10 km/h</p>
-                    </div>
-                    <div class="dayTimeContainer02 dayTimeContainer">
-                        <p class="dayTime">Mittags</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day03Icon02">
-                        <p class="dayTemperatur" id="day03Temperatur02">0° 0°</p>
-                        <p id="day03RainChance02" class="dayRainChance">Niederschlag: 0%</p>
-                        <p class="dayHumidity" id="day03Humidity02">Luftfeuchte: 00%</p>
-                        <p class="dayWind" id="day03Wind02">Wind 10 km/h</p>
-                    </div>
-                    <div class="dayTimeContainer03 dayTimeContainer">
-                        <p class="dayTime">Abends</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day03Icon03">
-                        <p class="dayTemperatur" id="day03Temperatur03">0° 0°</p>
-                        <p id="day03RainChance03" class="dayRainChance">Niederschlag: 0%</p>
-                        <p class="dayHumidity" id="day03Humidity03">Luftfeuchte: 00%</p>
-                        <p class="dayWind" id="day03Wind03">Wind 10 km/h</p>
-                    </div>
-                    <div class="dayTimeContainer04 dayTimeContainer">
-                        <p class="dayTime">Nachts</p>
-                        <img src="" alt="Wetter Icon" class="dayIcon" id="day03Icon04">
-                        <p class="dayTemperatur" id="day03Temperatur04">0° 0°</p>
-                        <p id="day03RainChance04" class="dayRainChance">Niederschlag: 0%</p>
-                        <p class="dayHumidity" id="day03Humidity04">Luftfeuchte: 00%</p>
-                        <p class="dayWind" id="day03Wind04">Wind 10 km/h</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    <!--
 
     <dialog id="modal">
         <div class="loader"></div>
@@ -161,13 +30,13 @@
                 <p class="appNameFirstPart">Wetter</p>
                 <p class="appNameSecondPart">App</p>
             </div>
-            <search class="searchCityInputContainer">
+            <search class="searchCityInputContainer" id="searchCityInputContainer">
                 <button class="searchCityBtn" id="submitLocationBtn">
                     <img src="<%=require('./assets/magnify.svg')%>" alt="" class="searchCityIcon">
                 </button>
-                <input type="text" placeholder="Das Wetter in ..." class="searchCityInput" id="locationInput">
+                <input type="text" value="Das Wetter in ..." placeholder="Das Wetter in ..." class="searchCityInput" id="locationInput">
             </search>
-            <img src="<%=require('./assets/window-close.svg')%>" alt="" class="closeWeatherAppIcon"></img>
+            <img src="<%=require('./assets/window-close.svg')%>" alt="" class="closeWindowBtn" id="closeWindowBtn"></img>
         </header>
 
         <main class="weatherAppMain">
@@ -225,7 +94,7 @@
                 </div>
             </section>
 
-            <section class="threeDaysOverviewDay">
+            <section class="threeDaysOverviewDay" id="threeDaysOverviewDay">
                 <div class="threeDaysOverviewDayHeadlineContainer">
                     <button class="swipeLeft">
                         <img src="<%=require('./assets/chevron-left.svg')%>" alt="" class="arrowLeftIcon" id="arrowLeft">
@@ -241,6 +110,7 @@
                         <div class="dot03 dot" id="dot03"></div>
                     </div>
                 </div>
+                
 
                 <div class="threeDaysOverviewArticleContainer">
                     <article class="dayTime01Article dayTimeArticle">
@@ -332,7 +202,6 @@
                     <button class="swipeRightFullDayOverviewBtn swipeBtn" id="swipeRightFullDayOverviewBtn">
                         <img src="<%=require('./assets/chevron-right.svg')%>" alt="" class="arrowRightIcon02 arrowIcon">
                     </button>
-                    <div class="transparency-bg" tabindex="-1"></div>
                     <ul class="fullDayOverviewList" id="fullDayOverviewList">
                         <li class="hour00 hour 00">
                             <h3 class="hour00Headline hourHeadline">00:00</h3>

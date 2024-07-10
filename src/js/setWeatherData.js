@@ -1,5 +1,5 @@
 import getWeatherData from "./getWeatherData";
-import { FullDayOverview, DayBtns, ThreeDaysOverviewHeadline } from "./ui";
+import { FullDayOverview, DayBtns, ThreeDaysOverviewHeadline, ThreeDaysOverviewWindow } from "./ui";
 
 "use strict";
 
@@ -408,6 +408,7 @@ const DataPlacement = {
 
         DayBtns.changeClass(day);
         ThreeDaysOverviewHeadline.changeDotClass(day);
+        ThreeDaysOverviewWindow.changeClasses();
 
         // Change the data depending to the Day
         this.updateFullDayOverview();
@@ -415,6 +416,5 @@ const DataPlacement = {
         this.setConditions();
     }
 }
-
 
 export { DataPlacement, weatherData };

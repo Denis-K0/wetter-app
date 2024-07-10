@@ -9,4 +9,6 @@ DataPlacement.setWeatherData();
 SearchBar.addEvents();
 FullDayOverview.start();
 DayBtns.addEvents();
+DayBtns.handleActiveBtnByScreenSize();
 ThreeDaysOverviewHeadline.addEvents();
+
