@@ -6,24 +6,6 @@
     <title>Wetter App</title>
 </head>
 <body>
-    <!--
-
-    <dialog id="modal">
-        <div class="loader"></div>
-    </dialog>
-
-    <dialog id="errorModal">
-        <div id="errorLoader">
-            <button id="errorBtn">Zurück</button>
-            <p id="errorMsg"></p>
-        </div>
-    </dialog>
-
-    <footer>
-        <p>"Wetter App" by DK</p>
-        <a href="https://www.amcharts.com" target="_blank" rel="noopener noreferrer">Icons created by amCharts</a>
-    </footer> -->
-
     <div class="appContainer">
         <header class="headerWeatherApp">
             <div class="appNameContainer">
@@ -389,17 +371,26 @@
                     </div>
                 </article>
             </section>
-        </main>
-
-        <dialog id="modal">
-            <div class="loader"></div>
-        </dialog>
-        <dialog id="errorModal">
-            <div id="errorLoader">
-                <button id="errorBtn">Zurück</button>
-                <p id="errorMsg"></p>
-            </div>
-        </dialog>
+        </main>        
     </div>
+
+    <dialog id="modal">
+        <div class="dialogContainer">
+            <div class="loader"></div>
+        </div>
+    </dialog>
+    <dialog id="errorModal">
+        <div class="dialogContainer">
+            <div id="errorLoader">
+            </div>
+            <p id="errorMsg"></p>
+            <button id="errorBtn">Zurück</button>
+        </div>
+    </dialog>
+
+    <footer>
+        <p>"Wetter App" by <wbr>Denis Kohleber © 2024</p>
+        <a href="https://www.amcharts.com" target="_blank" rel="noopener noreferrer">Icons created by amCharts</a>
+    </footer>
 </body>
 </html>

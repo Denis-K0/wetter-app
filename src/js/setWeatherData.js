@@ -54,21 +54,19 @@ const DataPlacement = {
     setWeatherData(selectedLocation = "Göttingen") {
         const firstStart = true;
         DataPlacement.openLoading();
-        setTimeout(() => {
-            getWeatherData(selectedLocation)
-                .then(data => {
-                    DataPlacement.addDataToPlace(data);
-                    return data;
-                })
-                .then(data => {
-                    weatherData = data;
-                    FullDayOverview.addScrollEvent();
-                    FullDayOverview.addClassCenteredElement(firstStart, firstStart);
-                })
-                .catch(DataPlacement.error)
-                .finally(DataPlacement.closeLoading);
-        }, 1000);
-    },
+        getWeatherData(selectedLocation)
+            .then(data => {
+                DataPlacement.addDataToPlace(data);
+                return data;
+            })
+            .then(data => {
+                weatherData = data;
+                FullDayOverview.addScrollEvent();
+                FullDayOverview.addClassCenteredElement(firstStart, firstStart);
+            })
+            .catch(DataPlacement.error)
+            .finally(setTimeout(DataPlacement.closeLoading, 700));
+},
     openLoading() {
         console.log("Wait ...");
         const modal = document.getElementById('modal');
