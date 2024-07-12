@@ -7,9 +7,9 @@ import { SearchBar, FullDayOverview, DayBtns, ThreeDaysOverviewHeadline, ThreeDa
 
 DataPlacement.setWeatherData();
 SearchBar.addEvents();
+ThreeDaysOverviewWindow.addSwipeEvents();
 FullDayOverview.start();
 DayBtns.addEvents();
 DayBtns.handleActiveBtnByScreenSize();
 ThreeDaysOverviewHeadline.addEvents();
-ThreeDaysOverviewWindow.addSwipeEvents();
 

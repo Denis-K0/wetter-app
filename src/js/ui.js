@@ -233,13 +233,18 @@ const ThreeDaysOverviewWindow = {
     searchCityInputContainer: document.getElementById('searchCityInputContainer'),
     touchStartX: 0,
     touchEndX: 0,
-    minSwipeDistance: 50,
+    minSwipeDistance: 30,
     touchStartTime: 0,
-    maxClickDuration: 200,
+    maxClickDuration: 150,
+    fullDayOverview: document.getElementById('fullDayOverviewList'),
+    isFullDayOverviewTouched: false,
     addSwipeEvents() {
         this.threeDaysOverviewDay.addEventListener('touchstart', (e) => {
             this.touchStartX = e.changedTouches[0].screenX;
             this.touchStartTime = new Date().getTime();
+
+            // Check if the touch is executed inside fullDayOverview
+            this.isFullDayOverviewTouched = this.isEventTargetInside(e.target, this.fullDayOverview);
         });
     
         this.threeDaysOverviewDay.addEventListener('touchmove', (e) => {
@@ -247,8 +252,11 @@ const ThreeDaysOverviewWindow = {
         });
     
         this.threeDaysOverviewDay.addEventListener('touchend', (e) => {
+            if (this.isFullDayOverviewTouched) return;
+
             const touchEndTime = new Date().getTime();
             const touchDuration = touchEndTime - this.touchStartTime;
+
             // Check if it was only a click
             if (touchDuration > this.maxClickDuration) this.handleSwipe();
         });
@@ -281,6 +289,11 @@ const ThreeDaysOverviewWindow = {
             if (distance > 0) DataPlacement.changeDay(1, 'arrow');
         }
     },
+    isEventTargetInside(target, parent) {
+        if (!target) return false;
+        if (target === parent) return true;
+        return this.isEventTargetInside(target.parentNode, parent);
+    }
 }
 
 export { SearchBar, FullDayOverview, DayBtns, ThreeDaysOverviewHeadline, ThreeDaysOverviewWindow };
