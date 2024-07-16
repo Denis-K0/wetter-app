@@ -2,7 +2,7 @@
 
 const getWeatherData = async (selectedLocation) => {
     
-    const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=4576e37b3e004227b9191411240505&q=${selectedLocation}&days=3&aqi=no&alerts=no`)
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=4576e37b3e004227b9191411240505&q=${selectedLocation}&days=3&aqi=no&alerts=no`)
         .catch(() => console.log("Error: Server not available"));   //If fetch throw his own Error,
                                                                     //this prevents that the Code stopps.
     if (response?.status === 400) {
