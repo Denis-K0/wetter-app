@@ -97,12 +97,12 @@ body {
     flex-flow: column;
     height: 100vh;
     width: 100vw;
-    max-width: 1000px;
-    max-height: 800px;
+    max-width: 1400px;
+    max-height: 1100px;
     box-shadow: 2px 2px 5px 0px #0000005e;;
 }
 
-@media screen and (max-width: 1050px), screen and (max-height: 950px) {
+@media screen and (max-width: 1450px), screen and (max-height: 1150px) {
     .appContainer {
         max-height: none;
         max-width: none;

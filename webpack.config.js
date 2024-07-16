@@ -27,9 +27,10 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-           title: "Denis Kohleber",
+           title: "Wetter App",
            filename: "index.html",
-           template: "src/template.html"
+           template: "src/template.html",
+           favicon: "src/assets/logo.png"
         }),
         new MiniCssExtractPlugin({
             filename: 'style.css',
