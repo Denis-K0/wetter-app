@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wetter App</title>
+<script defer src="bundle.js"></script><link href="style.css" rel="stylesheet"></head>
+<body>
+    <div class="appContainer">
+        <header class="headerWeatherApp">
+            <div class="appNameContainer">
+                <p class="appNameFirstPart">Wetter</p>
+                <p class="appNameSecondPart">App</p>
+            </div>
+            <search class="searchCityInputContainer" id="searchCityInputContainer">
+                <button class="searchCityBtn" id="submitLocationBtn">
+                    <img src="magnify.svg" alt="" class="searchCityIcon">
+                </button>
+                <input type="text" value="Das Wetter in ..." placeholder="Das Wetter in ..." class="searchCityInput" id="locationInput">
+            </search>
+            <img src="window-close.svg" alt="" class="closeWindowBtn" id="closeWindowBtn"></img>
+        </header>
+
+        <main class="weatherAppMain">
+            <section class="weatherAppHome">
+                <div class="weatherAppHeadlineContainer">                 
+                    <h1 id="city" class="cityName"></h1>
+                    <h2 id="country" class="countryName"></h2>  
+                </div>
+
+                <article class="currentWeather">
+                    <img src="" alt="" class="currentWeatherIcon" id="currentWeatherIcon">
+                    <div class="currentWeatherData01">
+                        <p class="currentWeatherDescription" id="currentWeatherDescription"></p>
+                        <p class="currentWeatherTemperature" id="currentTemperature"></p>
+                        <p class="currentTime" id="currentDateAndTime"></p>
+                    </div>
+                    <div class="currentWeatherData02">
+                        <figure class="currentRainChance">
+                            <img src="weather-pouring.svg" alt="" class="currentRainChanceIcon">
+                            <p class="currentRainChancePercent currentConditionValue" id="currentRainChance"></p>
+                            <figcaption class="currentRainChanceCaption currentConditionCaption">Niederschlag</figcaption>
+                        </figure>
+                        <figure class="currentHumidity">
+                            <img src="water-percent.svg" alt="" class="currentHumidityIcon">
+                            <p class="currentHumidityPercent currentConditionValue" id="currentHumidity"></p>
+                            <figcaption class="currentHumidityCaption currentConditionCaption">Luftfeuchte</figcaption>
+                        </figure>
+                        <figure class="currentWind">
+                            <img src="weather-windy.svg" alt="" class="currentWindIcon">
+                            <p class="currentWindPerHour currentConditionValue" id="currentWind"></p>
+                            <figcaption class="currentWindCaption currentConditionCaption">Windstärke</figcaption>
+                        </figure>
+                    </div>
+                </article>
+
+                <div class="threeDaysOverview">
+                    <button class="day01Btn dayBtn active" id="day01Btn">
+                        <h2 class="day01Name dayName" id="day01Name"></h2>
+                        <img src="" alt="" class="day01WeatherIcon dayWeatherIcon" id="day01Icon">
+                        <p class="day01MaxTemperature dayMaxTemperature" id="day01MaxTemperature"></p>
+                        <p class="day01MinTemperature dayMinTemperature" id="day01MinTemperature"></p>
+                    </button>
+                    <button class="day02Btn dayBtn" id="day02Btn">
+                        <h2 class="day02Name dayName" id="day02Name"></h2>
+                        <img src="" alt="" class="day02WeatherIcon dayWeatherIcon" id="day02Icon">
+                        <p class="day02MaxTemperature dayMaxTemperature" id="day02MaxTemperature"></p>
+                        <p class="day02MinTemperature dayMinTemperature" id="day02MinTemperature"></p>
+                    </button>
+                    <button class="day03Btn dayBtn" id="day03Btn">
+                        <h2 class="day03Name dayName" id="day03Name"></h2>
+                        <img src="" alt="" class="day03WeatherIcon dayWeatherIcon" id="day03Icon">
+                        <p class="day03MaxTemperature dayMaxTemperature" id="day03MaxTemperature"></p>
+                        <p class="day03MinTemperature dayMinTemperature" id="day03MinTemperature"></p>
+                    </button>
+                </div>
+            </section>
+
+            <section class="threeDaysOverviewDay" id="threeDaysOverviewDay">
+                <div class="threeDaysOverviewDayHeadlineContainer">
+                    <button class="swipeLeft">
+                        <img src="chevron-left02.svg" alt="" class="arrowLeftIcon" id="arrowLeft">
+                    </button>
+                    <h1 class="threeDaysOverviewDayHeadline">3-Tages Übersicht</h1>
+                    <h2 class="threeDaysOverviewDayName" id="dateDay"></h2>
+                    <button class="swipeRight">
+                        <img src="chevron-right02.svg" alt="" class="arrowRightIcon" id="arrowRight">
+                    </button>
+                    <div class="dotsContainer">
+                        <div class="dot01 dot active" id="dot01"></div>
+                        <div class="dot02 dot" id="dot02"></div>
+                        <div class="dot03 dot" id="dot03"></div>
+                    </div>
+                </div>
+                
+
+                <div class="threeDaysOverviewArticleContainer">
+                    <article class="dayTime01Article dayTimeArticle">
+                        <h3 class="dayTime">Morgens</h3>
+                        <figure class="dayTimeWeather">
+                            <img src="" alt="" id="dayIcon01" class="dayTimeWeatherIcon">
+                            <figcaption class="dayTimeTemperature" id="dayTemperature01"></figcaption>
+                        </figure>
+                        <figure class="dayTimeRainChance">
+                            <img src="weather-pouring.svg"  alt="" class="dayTimeRainChanceIcon dayTimeConditionIcon">
+                            <figcaption class="dayTimeRainChanceValue" id="dayRainChance01"></figcaption>
+                        </figure>
+                        <figure class="dayTimeHumidity">
+                            <img src="water-percent.svg" alt="" class="dayTimeHumidityIcon dayTimeConditionIcon">
+                            <figcaption class="dayTimeHumidityValue" id="dayHumidity01"></figcaption>
+                        </figure>
+                        <figure class="dayTimeWind">
+                            <img src="weather-windy.svg" alt="" class="dayTimeWindIcon dayTimeConditionIcon">
+                            <figcaption class="dayTimeWindValue" id="dayWind01"></figcaption>
+                            <img class="kmhIcon" src="kmh.svg" alt="">
+                        </figure>
+                    </article>
+                    <article class="dayTime02Article dayTimeArticle">
+                        <h3 class="dayTime">Mittags</h3>
+                        <figure class="dayTimeWeather">
+                            <img src="" alt="" id="dayIcon02" class="dayTimeWeatherIcon">
+                            <figcaption class="dayTimeTemperature" id="dayTemperature02"></figcaption>
+                        </figure>
+                        <figure class="dayTimeRainChance">
+                            <img src="weather-pouring.svg"  alt="" class="dayTimeRainChanceIcon dayTimeConditionIcon">
+                            <figcaption id="dayRainChance02" class="dayTimeRainChanceValue"></figcaption>
+                        </figure>
+                        <figure class="dayTimeHumidity">
+                            <img src="water-percent.svg" alt="" class="dayTimeHumidityIcon dayTimeConditionIcon">
+                            <figcaption id="dayHumidity02" class="dayTimeHumidityValue"></figcaption>
+                        </figure>
+                        <figure class="dayTimeWind">
+                            <img src="weather-windy.svg" alt="" class="dayTimeWindIcon dayTimeConditionIcon">
+                            <figcaption id="dayWind02" class="dayTimeWindValue"></figcaption>
+                            <img class="kmhIcon" src="kmh.svg" alt="">
+                        </figure>
+                    </article>
+                    <article class="dayTime03Article dayTimeArticle">
+                        <h3 class="dayTime">Abends</h3>
+                        <figure class="dayTimeWeather">
+                            <img src="" alt="" id="dayIcon03" class="dayTimeWeatherIcon">
+                            <figcaption class="dayTimeTemperature" id="dayTemperature03"></figcaption>
+                        </figure>
+                        <figure class="dayTimeRainChance">
+                            <img src="weather-pouring.svg"  alt="" class="dayTimeRainChanceIcon dayTimeConditionIcon">
+                            <figcaption id="dayRainChance03" class="dayTimeRainChanceValue"></figcaption>
+                        </figure>
+                        <figure class="dayTimeHumidity">
+                            <img src="water-percent.svg" alt="" class="dayTimeHumidityIcon dayTimeConditionIcon">
+                            <figcaption id="dayHumidity03" class="dayTimeHumidityValue"></figcaption>
+                        </figure>
+                        <figure class="dayTimeWind">
+                            <img src="weather-windy.svg" alt="" class="dayTimeWindIcon dayTimeConditionIcon">
+                            <figcaption id="dayWind03" class="dayTimeWindValue"></figcaption>
+                            <img class="kmhIcon" src="kmh.svg" alt="">
+                        </figure>
+                    </article>
+                    <article class="dayTime04Article dayTimeArticle">
+                        <h3 class="dayTime">Nachts</h3>
+                        <figure class="dayTimeWeather">
+                            <img src="" alt="" id="dayIcon04" class="dayTimeWeatherIcon">
+                            <figcaption class="dayTimeTemperature" id="dayTemperature04"></figcaption>
+                        </figure>
+                        <figure class="dayTimeRainChance">
+                            <img src="weather-pouring.svg"  alt="" class="dayTimeRainChanceIcon dayTimeConditionIcon">
+                            <figcaption id="dayRainChance04" class="dayTimeRainChanceValue"></figcaption>
+                        </figure>
+                        <figure class="dayTimeHumidity">
+                            <img src="water-percent.svg" alt="" class="dayTimeHumidityIcon dayTimeConditionIcon">
+                            <figcaption id="dayHumidity04" class="dayTimeHumidityValue"></figcaption>
+                        </figure>
+                        <figure class="dayTimeWind">
+                            <img src="weather-windy.svg" alt="" class="dayTimeWindIcon dayTimeConditionIcon">
+                            <figcaption id="dayWind04" class="dayTimeWindValue"></figcaption>
+                            <img class="kmhIcon" src="kmh.svg" alt="">
+                        </figure>
+                    </article>
+                </div>
+
+                <article class="fullDayOverview">
+                    <button class="swipeLeftFullDayOverviewBtn swipeBtn" id="swipeLeftFullDayOverviewBtn">
+                        <img src="chevron-left.svg" alt="" class="arrowLeftIcon02 arrowIcon">
+                    </button>
+                    <button class="swipeRightFullDayOverviewBtn swipeBtn" id="swipeRightFullDayOverviewBtn">
+                        <img src="chevron-right.svg" alt="" class="arrowRightIcon02 arrowIcon">
+                    </button>
+                    <ul class="fullDayOverviewList" id="fullDayOverviewList">
+                        <li class="hour00 hour 00">
+                            <h3 class="hour00Headline hourHeadline">00:00</h3>
+                            <figure class="hour00Figure hourFigure">
+                                <img src="" alt="" class="hour00Icon hourIcon" id="hour00Icon">
+                                <figcaption class="hour00Temperature hourTemperature" id="hour00Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour01 hour 01">
+                            <h3 class="hour01Headline hourHeadline">01:00</h3>
+                            <figure class="hour01Figure hourFigure">
+                                <img src="" alt="" class="hour01Icon hourIcon" id="hour01Icon">
+                                <figcaption class="hour01Temperature hourTemperature" id="hour01Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour02 hour 02">
+                            <h3 class="hour02Headline hourHeadline">02:00</h3>
+                            <figure class="hour02Figure hourFigure">
+                                <img src="" alt="" class="hour02Icon hourIcon" id="hour02Icon">
+                                <figcaption class="hour02Temperature hourTemperature" id="hour02Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour03 hour 03">
+                            <h3 class="hour03Headline hourHeadline">03:00</h3>
+                            <figure class="hour03Figure hourFigure">
+                                <img src="" alt="" class="hour03Icon hourIcon" id="hour03Icon">
+                                <figcaption class="hour03Temperature hourTemperature" id="hour03Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour04 hour 04">
+                            <h3 class="hour04Headline hourHeadline">04:00</h3>
+                            <figure class="hour04Figure hourFigure">
+                                <img src="" alt="" class="hour04Icon hourIcon" id="hour04Icon">
+                                <figcaption class="hour04Temperature hourTemperature" id="hour04Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour05 hour 05">
+                            <h3 class="hour05Headline hourHeadline">05:00</h3>
+                            <figure class="hour05Figure hourFigure">
+                                <img src="" alt="" class="hour05Icon hourIcon" id="hour05Icon">
+                                <figcaption class="hour05Temperature hourTemperature" id="hour05Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour06 hour 06">
+                            <h3 class="hour06Headline hourHeadline">06:00</h3>
+                            <figure class="hour06Figure hourFigure">
+                                <img src="" alt="" class="hour06Icon hourIcon" id="hour06Icon">
+                                <figcaption class="hour06Temperature hourTemperature" id="hour06Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour07 hour 07">
+                            <h3 class="hour07Headline hourHeadline">07:00</h3>
+                            <figure class="hour07Figure hourFigure">
+                                <img src="" alt="" class="hour07Icon hourIcon" id="hour07Icon">
+                                <figcaption class="hour07Temperature hourTemperature" id="hour07Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour08 hour 08">
+                            <h3 class="hour08Headline hourHeadline">08:00</h3>
+                            <figure class="hour08Figure hourFigure">
+                                <img src="" alt="" class="hour08Icon hourIcon" id="hour08Icon">
+                                <figcaption class="hour08Temperature hourTemperature" id="hour08Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour09 hour 09">
+                            <h3 class="hour09Headline hourHeadline">09:00</h3>
+                            <figure class="hour09Figure hourFigure">
+                                <img src="" alt="" class="hour09Icon hourIcon" id="hour09Icon">
+                                <figcaption class="hour09Temperature hourTemperature" id="hour09Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour10 hour 10">
+                            <h3 class="hour10Headline hourHeadline">10:00</h3>
+                            <figure class="hour10Figure hourFigure">
+                                <img src="" alt="" class="hour10Icon hourIcon" id="hour10Icon">
+                                <figcaption class="hour10Temperature hourTemperature" id="hour10Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour11 hour 11">
+                            <h3 class="hour11Headline hourHeadline">11:00</h3>
+                            <figure class="hour11Figure hourFigure">
+                                <img src="" alt="" class="hour11Icon hourIcon" id="hour11Icon">
+                                <figcaption class="hour11Temperature hourTemperature" id="hour11Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour12 hour 12" id="hour12">
+                            <h3 class="hour12Headline hourHeadline">12:00</h3>
+                            <figure class="hour12Figure hourFigure">
+                                <img src="" alt="" class="hour12Icon hourIcon" id="hour12Icon">
+                                <figcaption class="hour12Temperature hourTemperature" id="hour12Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour13 hour 13">
+                            <h3 class="hour13Headline hourHeadline">13:00</h3>
+                            <figure class="hour13Figure hourFigure">
+                                <img src="" alt="" class="hour13Icon hourIcon" id="hour13Icon">
+                                <figcaption class="hour13Temperature hourTemperature" id="hour13Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour14 hour 14">
+                            <h3 class="hour14Headline hourHeadline">14:00</h3>
+                            <figure class="hour14Figure hourFigure">
+                                <img src="" alt="" class="hour14Icon hourIcon" id="hour14Icon">
+                                <figcaption class="hour14Temperature hourTemperature" id="hour14Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour15 hour 15">
+                            <h3 class="hour15Headline hourHeadline">15:00</h3>
+                            <figure class="hour15Figure hourFigure">
+                                <img src="" alt="" class="hour15Icon hourIcon" id="hour15Icon">
+                                <figcaption class="hour15Temperature hourTemperature" id="hour15Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour16 hour 16">
+                            <h3 class="hour16Headline hourHeadline">16:00</h3>
+                            <figure class="hour16Figure hourFigure">
+                                <img src="" alt="" class="hour16Icon hourIcon" id="hour16Icon">
+                                <figcaption class="hour16Temperature hourTemperature" id="hour16Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour17 hour 17">
+                            <h3 class="hour17Headline hourHeadline">17:00</h3>
+                            <figure class="hour17Figure hourFigure">
+                                <img src="" alt="" class="hour17Icon hourIcon" id="hour17Icon">
+                                <figcaption class="hour17Temperature hourTemperature" id="hour17Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour18 hour 18">
+                            <h3 class="hour18Headline hourHeadline">18:00</h3>
+                            <figure class="hour18Figure hourFigure">
+                                <img src="" alt="" class="hour18Icon hourIcon" id="hour18Icon">
+                                <figcaption class="hour18Temperature hourTemperature" id="hour18Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour19 hour 19">
+                            <h3 class="hour19Headline hourHeadline">19:00</h3>
+                            <figure class="hour19Figure hourFigure">
+                                <img src="" alt="" class="hour19Icon hourIcon" id="hour19Icon">
+                                <figcaption class="hour19Temperature hourTemperature" id="hour19Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour20 hour 20">
+                            <h3 class="hour20Headline hourHeadline">20:00</h3>
+                            <figure class="hour20Figure hourFigure">
+                                <img src="" alt="" class="hour20Icon hourIcon" id="hour20Icon">
+                                <figcaption class="hour20Temperature hourTemperature" id="hour20Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour21 hour 21">
+                            <h3 class="hour21Headline hourHeadline">21:00</h3>
+                            <figure class="hour21Figure hourFigure">
+                                <img src="" alt="" class="hour21Icon hourIcon" id="hour21Icon">
+                                <figcaption class="hour21Temperature hourTemperature" id="hour21Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour22 hour 22">
+                            <h3 class="hour22Headline hourHeadline">22:00</h3>
+                            <figure class="hour22Figure hourFigure">
+                                <img src="" alt="" class="hour22Icon hourIcon" id="hour22Icon">
+                                <figcaption class="hour22Temperature hourTemperature" id="hour22Temperature"></figcaption>
+                            </figure>
+                        </li>
+                        <li class="hour23 hour 23">
+                            <h3 class="hour23Headline hourHeadline">23:00</h3>
+                            <figure class="hour23Figure hourFigure">
+                                <img src="" alt="" class="hour23Icon hourIcon" id="hour23Icon">
+                                <figcaption class="hour23Temperature hourTemperature" id="hour23Temperature"></figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                    <div class="conditionContainer">
+                        <figure class="hourRainChanceFigure">
+                            <img src="weather-pouring.svg" alt="" class="hourRainChanceIcon">
+                            <figcaption class="hourRainChanceValue" id="hourRainChanceValue"></figcaption>
+                        </figure>
+                        <figure class="hourHumidityFigure">
+                            <img src="water-percent.svg" alt="" class="hourHumidityIcon">
+                            <figcaption class="hourHumidityValue" id="hourHumidityValue"></figcaption>
+                        </figure>
+                        <figure class="hourWindFigure">
+                            <img src="weather-windy.svg" alt="" class="hourWindIcon">
+                            <figcaption class="hourWindValue" id="hourWindValue"></figcaption>
+                            <img class="kmhIcon" src="kmh.svg" alt="">
+                        </figure>
+                    </div>
+                </article>
+            </section>
+        </main>        
+    </div>
+
+    <dialog id="modal">
+        <div class="dialogContainer">
+            <div class="loader"></div>
+        </div>
+    </dialog>
+    <dialog id="errorModal">
+        <div class="dialogContainer">
+            <div id="errorLoader">
+            </div>
+            <p id="errorMsg"></p>
+            <button id="errorBtn">Zurück</button>
+        </div>
+    </dialog>
+
+    <footer>
+        <p>"Wetter App" by <wbr>Denis Kohleber © 2024</p>
+        <a href="https://www.amcharts.com" target="_blank" rel="noopener noreferrer">Icons created by amCharts</a>
+    </footer>
+</body>
+</html>
