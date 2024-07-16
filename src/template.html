@@ -8,17 +8,19 @@
 <body>
     <div class="appContainer">
         <header class="headerWeatherApp">
-            <div class="appNameContainer">
-                <p class="appNameFirstPart">Wetter</p>
-                <p class="appNameSecondPart">App</p>
+            <div class="headerContentContainer">
+                <div class="appNameContainer">
+                    <p class="appNameFirstPart">Wetter</p>
+                    <p class="appNameSecondPart">App</p>
+                </div>
+                <search class="searchCityInputContainer" id="searchCityInputContainer">
+                    <button class="searchCityBtn" id="submitLocationBtn">
+                        <img src="<%=require('./assets/magnify.svg')%>" alt="" class="searchCityIcon">
+                    </button>
+                    <input type="text" value="Das Wetter in ..." placeholder="Das Wetter in ..." class="searchCityInput" id="locationInput">
+                </search>
+                <img src="<%=require('./assets/window-close.svg')%>" alt="" class="closeWindowBtn" id="closeWindowBtn"></img>
             </div>
-            <search class="searchCityInputContainer" id="searchCityInputContainer">
-                <button class="searchCityBtn" id="submitLocationBtn">
-                    <img src="<%=require('./assets/magnify.svg')%>" alt="" class="searchCityIcon">
-                </button>
-                <input type="text" value="Das Wetter in ..." placeholder="Das Wetter in ..." class="searchCityInput" id="locationInput">
-            </search>
-            <img src="<%=require('./assets/window-close.svg')%>" alt="" class="closeWindowBtn" id="closeWindowBtn"></img>
         </header>
 
         <main class="weatherAppMain">
