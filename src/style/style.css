@@ -216,7 +216,7 @@ body {
 }
 
 @media screen and (max-width: 500px), screen and (max-height: 650px)  {
-    .headerWeatherApp {
+    .headerContentContainer {
         justify-content: space-between;
         padding: 3px 20px;
     }
