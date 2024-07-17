@@ -53,7 +53,7 @@ table {
 
 html, body {
     scroll-behavior: smooth; 
-    height: 100vh;
+    height: 100svh;
     margin: 0;
     font-family: 'Roboto', sans-serif;
     color: var(--secondaryColor);
